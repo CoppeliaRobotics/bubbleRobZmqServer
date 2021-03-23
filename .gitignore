@@ -1,0 +1,10 @@
+.qmake.stash
+Makefile
+*.o
+bubbleRobZmqServer
+bubbleRobZmqServer.exe
+Makefile.Debug
+Makefile.Release
+debug/
+release/
+*.pro.user
