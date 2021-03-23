@@ -7,4 +7,5 @@ Makefile.Debug
 Makefile.Release
 debug/
 release/
+build/
 *.pro.user
