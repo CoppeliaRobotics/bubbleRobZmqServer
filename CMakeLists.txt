@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.5)
+project(bubbleRobZmqServer)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_MACOSX_RPATH 1)
+
+if(WIN32)
+    find_package(ZeroMQ CONFIG REQUIRED)
+    set(ZMQ_INCLUDE_DIRS ${ZeroMQ_INCLUDE_DIR})
+else()
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(ZMQ REQUIRED IMPORTED_TARGET libzmq)
+endif()
+
+add_executable(bubbleRobZmqServer bubbleRobZmqServer.cpp)
+if(WIN32)
+    target_link_libraries(bubbleRobZmqServer libzmq-static)
+else()
+    target_link_libraries(bubbleRobZmqServer PkgConfig::ZMQ)
+endif()
+install(TARGETS bubbleRobZmqServer DESTINATION ${DESTDIR})
