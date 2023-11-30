@@ -61,7 +61,7 @@ unix:!symbian {
 HEADERS += \
 
 SOURCES += \
-    bubbleRobZmqServer.cpp
+    sourceCode/bubbleRobZmqServer.cpp
 
 
 

@@ -12,7 +12,7 @@ else()
     pkg_check_modules(ZMQ REQUIRED IMPORTED_TARGET libzmq)
 endif()
 
-add_executable(bubbleRobZmqServer bubbleRobZmqServer.cpp)
+add_executable(bubbleRobZmqServer sourceCode/bubbleRobZmqServer.cpp)
 if(WIN32)
     target_link_libraries(bubbleRobZmqServer libzmq-static)
 else()
